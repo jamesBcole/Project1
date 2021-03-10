@@ -1,20 +1,27 @@
-package votingsystems;
+package Project1;
 
 public class DistrictElectoralOffice extends CollationCenters {
-	public int districtID;
 	
-	public DistrictElectoralOffice(String location,int districtID){
+	public DistrictElectoralOffice(String location,int centerID){
 	    //invoking the CollationCenters class constructor
-	    super(location);
-	    this.districtID=districtID;
+	    super(location, centerID);
+        this.location = location;
+	    this.centerID=centerID;
+        
 	}
 	    
-	 // accessor methods and mutator methods
-	    public int getDistrictID() {
-	        return districtID;
-	    }
-	    public void setDistrictID(int districtID) {
-	        this.districtID=districtID;
-	    }
+    // accessor methods and mutator methods
+    public int getDistrictID() {
+        return centerID;
+    }
+    public void setDistrictID(int districtID) {
+        this.centerID=districtID;
+    }
 
+    public void printResults() {
+        System.out.println("The "+ this + " office collected results from these polling stations: "+ receivesFrom);
+        System.out.println("The results are as follows: ");
+        System.out.println(results);
+       
+    }
 }

@@ -1,12 +1,15 @@
-package votingsystems;
+package Project1;
+
 
 public class PollingStation extends CollationCenters {
 	public int pollID;
+    
 	
-	public PollingStation(String location,int pollID){
+	public PollingStation(String location, int centerID){
 	    //invoking the CollationCenters class constructor
-	    super(location);
-	    this.pollID=pollID;
+	    super(location, centerID);
+	    this.centerID=centerID;
+        this.location=location;
 	    
 	}
 	
@@ -18,6 +21,18 @@ public class PollingStation extends CollationCenters {
         this.pollID=pollID;
     }
 
+    public void addVote(Voter voter, String candidate) {
+        voteLog.put(voter.getVoterID(), candidate);
+    }
+
+    public void printResults(){
+        System.out.println("The results from the " + this + " polling station are as follows: ");
+        System.out.println(results);
+        
+       
+    }
 }
+
+
 
 

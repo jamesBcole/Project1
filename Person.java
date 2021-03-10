@@ -1,4 +1,5 @@
-package votingsystems;
+package Project1;
+
 
 import java.time.LocalDate;
 
@@ -35,21 +36,10 @@ public class Person {
     public void setNID(int NID) {
         this.NID=NID;
     }
-    
+    @Override
     public String toString() {
-    	
+    	return name;
     }
     
-    public int hashCode() {
-    	
-    }
-    
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		
-
-	}
 
 }
