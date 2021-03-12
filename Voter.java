@@ -6,8 +6,8 @@ import java.time.LocalDate;
 
 
 public class Voter extends Person implements Verifiable {
-	public int pollID;
-	public int voterID;
+	private int pollID;
+	private int voterID;
     String votedFor;
 
 	
@@ -34,7 +34,7 @@ public class Voter extends Person implements Verifiable {
 
     public boolean check(CollationCenters poll) {
         if (this.pollID != poll.centerID) {
-            System.out.println(name + " is not elligible to vote at " + poll.location +".");
+            System.out.println(this.getName() + " is not elligible to vote at " + poll.location +".");
             return false;
         }
         if (poll.voteLog.containsKey(voterID)) {
@@ -49,7 +49,7 @@ public class Voter extends Person implements Verifiable {
             votedFor  = candidate.toString();
             poll.addVote(this, votedFor);
             System.out.println("Vote successfully recorded.");
-            //Database.addVote(this, votedFor)
+            Database.addVote(this, votedFor);
         }
 
 

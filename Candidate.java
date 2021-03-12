@@ -5,8 +5,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Candidate extends Person {
-	public int candidateID;
-	public String party;
+	private int candidateID;
+	private String party;
     public static ArrayList<String> candidateList = new ArrayList<String>();
 	
 	public Candidate(String name,LocalDate DOB,int NID,int candidateID,String party) {

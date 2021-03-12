@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Election {
     public static void main(String args[]) {
+        
         //Create Collation Centers
-        //(Location,PollID)
        
         NationalElectoralHeadquarters hq = new NationalElectoralHeadquarters("headquarters", 9999);
 
@@ -29,22 +29,21 @@ public class Election {
         aden2.setReporting(adenta);
         PollingStation hoe1 = new PollingStation("HOE1", 4444);
         hoe1.setReporting(hoehoe);
+        //demonstrating duplicate reporting
         hoe1.setReporting(adenta);
         
         
         //Create People
-    
         Candidate mahama = new Candidate("Mahama", LocalDate.of(1958,11,29),2368,0001,"NDC");
         Candidate akufoAddo = new Candidate("Akufo-Addo", LocalDate.of(1944,03,29),4739,0002, "NPP");
 
-
-        Voter john = new Voter("John Mensah",LocalDate.of(1999,11,23),2444,1111,5678);
-        john.vote(tw1,mahama);
         Voter ama = new Voter("Ama Boakye", LocalDate.of(1997,04,12),3555,4444,3526);
         //demonstrating incorrect entry
         ama.vote(aden1, mahama);
         ama.vote(hoe1, mahama);
 
+        Voter john = new Voter("John Mensah",LocalDate.of(1999,11,23),2444,1111,5678);
+        john.vote(tw1,mahama);
         Voter mike = new Voter("Mike Brown", LocalDate.of(1996,01,14),4666,3333,2526);
         mike.vote(aden2, akufoAddo);
         Voter abena = new Voter("Abena Koranteng", LocalDate.of(1998,06,21),5777,2222,3124);
@@ -55,7 +54,6 @@ public class Election {
         kofi.vote(tw1,akufoAddo);
         Voter samuel = new Voter("Samuel Tetteh", LocalDate.of(1999,12,04), 7999, 2222, 9458);
         samuel.vote(aden1, akufoAddo);
-        
         Voter kojo = new Voter("Kojo Adjei", LocalDate.of(2000,02,05), 8000, 2222, 1454);
         kojo.vote(aden1, mahama);
         Voter araba = new Voter("Araba Frimpong", LocalDate.of(1997,07,11), 9111, 4444, 8253);
@@ -85,13 +83,6 @@ public class Election {
         temaWest.printResults();
         greaterAccra.printResults();
         hq.printResults();
-        
-        
-
-
-
-
-
     }
     
 }

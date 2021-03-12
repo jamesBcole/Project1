@@ -5,9 +5,9 @@ import java.time.LocalDate;
 
 public class Person {
 	//creating instance variables
-	public String name;
-    public LocalDate DOB;
-    public int NID;
+	private String name;
+    private LocalDate DOB;
+    private int NID;
     
     // Constructor for person class
     public Person(String name,LocalDate DOB,int NID) {

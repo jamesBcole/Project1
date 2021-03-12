@@ -6,12 +6,12 @@ import java.util.Collections;
 
 public abstract class CollationCenters implements Verifiable {
 	//creating instance variables
-	public String location;
+	String location;
     HashMap<Integer, String> voteLog = new HashMap<Integer, String>();
     HashMap<String, Integer> results = new HashMap<String, Integer>();
     CollationCenters reportsTo;
 	ArrayList<CollationCenters> receivesFrom = new ArrayList<CollationCenters>();
-    public int centerID;
+    int centerID;
 	
     public CollationCenters(String location, int centerID) {
         this.centerID = centerID;
